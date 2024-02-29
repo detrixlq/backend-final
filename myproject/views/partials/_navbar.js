@@ -15,8 +15,9 @@
         <a class="nav-link" href="/my-profile">My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/logout">LogOut</a>
+        <a class="nav-link" href="/logout">Logout</a>
       </li>
+      
     </ul>
   </div>
 </nav>
