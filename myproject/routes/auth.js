@@ -8,15 +8,6 @@ router.get('/register', (req, res) => {
   res.render('register');
 });
 
-router.get('/main', async (req, res) => {
-  try {
-    const items = await PortfolioItem.find({ deletedAt: null });
-    res.render('main', { items });
-  } catch (error) {
-    res.status(500).send(error);
-  }
-});
-
 router.get('/login', (req, res) => {
   res.render('login');
 });
@@ -56,7 +47,8 @@ router.post('/register', async (req, res) => {
       if (user) {
         const isValid = await bcrypt.compare(password, user.password);
         if (isValid) {
-          return res.redirect('/main');
+          req.session.userId = user._id; // Assuming 'user' is the authenticated user object
+          res.redirect('/my-profile');
         } else {
           // Passwords do not match
           res.send('Invalid username or password');

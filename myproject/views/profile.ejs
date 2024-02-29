@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Profile</title>
-  <!-- Include CSS and Bootstrap for styling -->
+  <title>My Profile:</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/profile.css">
 </head>
 <body>
-  <h1>My Profile</h1>
-  <p>Name: <%= user.username %></p>
-  <p>Email: <%= user.age %></p>
+    <%- include('partials/_navbar.js') %>
+    <div class="item">
+        <h1>My Profile</h1>
+        <p>Username: <%= user.username %></p>
+        <p>First Name: <%= user.firstName %></p>
+        <p>Last Name: <%= user.lastName %></p>
+        <p>Age: <%= user.age %></p>
+        <p>Country: <%= user.country %></p>
+        <p>Gender: <%= user.gender %></p>
+        <p>Role: <%= user.role %></p>
+    </div>
+
+  
   <!-- Display more user data as needed -->
+  <footer>Ali Atchibayev SE-2211</footer>
 </body>
 </html>

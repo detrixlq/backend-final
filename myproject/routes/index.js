@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const PortfolioItem = require('../models/PortfolioItem');
 const authCheck = require('../middleware/authCheck');
+const User = require('../models/User')
 
 router.get('/', async (req, res) => {
   try {
@@ -12,14 +13,20 @@ router.get('/', async (req, res) => {
   }
 });
 
-// router.get('/profile', authCheck, (req, res) => {
-//   // Assuming `User` is your user model and you store the user's ID in `req.session.userId`
-//   User.findById(req.session._id, (err, user) => {
-//     if (err || !user) {
-//       return res.redirect('/login');
-//     }
-//     res.render('profile', { user: user }); // Render the profile page with user data
-//   });
-// });
+router.get('/my-profile', async (req, res) => {
+  if (!req.session.userId) {
+    return res.redirect('/login'); // Redirect to login if not authenticated
+  }
+
+  try {
+    const user = await User.findById(req.session.userId);
+    res.render('profile', { user });
+  } catch (error) {
+    console.error(error);
+    res.status(500).send('Server error');
+  }
+});
+
+
 
 module.exports = router;

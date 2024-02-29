@@ -1,6 +1,15 @@
 const express = require('express');
 const connectDB = require('./config/db'); // Database configuration
 const app = express();
+const session = require('express-session');
+
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true,
+  // Add other options as needed, like store for production
+}));
+
 
 // Connect to Database
 connectDB();
