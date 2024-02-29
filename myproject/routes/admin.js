@@ -3,17 +3,25 @@ const router = express.Router();
 const PortfolioItem = require('../models/PortfolioItem');
 const upload = require('../config/multerConfig');
 const bodyParser = require('body-parser');
+const isAdmin = require('../middleware/isAdmin');
+const isAuthenticated = require('../middleware/isAuthenticated');
+const User = require('../models/User')
 
 
 // Display admin dashboard with existing items
-router.get('/admin', async (req, res) => {
-  const items = await PortfolioItem.find();
-  res.render('admin', { items });
+router.get('/admin', isAuthenticated, async (req, res) => {
+  const user = await User.findById(req.session.userId);
+  if(user.role === "admin"){
+    const items = await PortfolioItem.find();
+    res.render('admin', { items });
+  } else{
+    return res.status(403).send('Access denied. Only admins allowed.');
+  }
+  
 });
 
 router.get('/admin/edit-item/:id', async (req, res) => {
   const itemId = req.params.id;
-
   try {
     const item = await PortfolioItem.findById(itemId);
     if (!item) {

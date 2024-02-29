@@ -26,11 +26,10 @@
 </head>
 <body>
   <%- include('partials/_navbar.js') %>
-  <div class="container">
+  <div class="container" >
     <!-- Sample Container with Data -->
-    <% items.forEach(item => { %>
-      <div class="item">
         <% items.forEach((item, index) => { %>
+          <div class="item">
           <div id="carousel<%= index %>" class="carousel slide" data-ride="carousel">
             <div class="carousel-inner">
               <% item.images.forEach((image, idx) => { %>
@@ -51,11 +50,10 @@
           <h3><%= item.name %></h3>
           <p><%= item.description %></p>
           <p class="timestamp"><%= item.createdAt %></p>
+        </div>
         <% }) %>
-      </div>
-    <% }) %>
     
-    
+        
   </div>
   <footer>Ali Atchibayev SE-2211</footer>
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

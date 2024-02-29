@@ -1,10 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const PortfolioItem = require('../models/PortfolioItem');
-const authCheck = require('../middleware/authCheck');
 const User = require('../models/User')
+const isAuthenticated = require('../middleware/isAuthenticated')
 
-router.get('/', async (req, res) => {
+router.get('/', isAuthenticated, async (req, res) => {
   try {
     const items = await PortfolioItem.find({ deletedAt: null });
     res.render('main', { items });
@@ -13,11 +13,7 @@ router.get('/', async (req, res) => {
   }
 });
 
-router.get('/my-profile', async (req, res) => {
-  if (!req.session.userId) {
-    return res.redirect('/login'); // Redirect to login if not authenticated
-  }
-
+router.get('/my-profile', isAuthenticated, async (req, res) => {
   try {
     const user = await User.findById(req.session.userId);
     res.render('profile', { user });

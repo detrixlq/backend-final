@@ -9,13 +9,13 @@
         <a class="nav-link" href="/">Home </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/admin">Admin Dashboard/</a>
+        <a class="nav-link" href="/admin">Admin Dashboard</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/portfolio">Portfolio</a>
+        <a class="nav-link" href="/my-profile">My Profile</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/contact">Contact</a>
+        <a class="nav-link" href="/logout">LogOut</a>
       </li>
     </ul>
   </div>
