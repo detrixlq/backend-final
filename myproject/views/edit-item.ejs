@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Item</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Item</h1>
+    <form action="/admin/edit-item/<%= item._id %>" method="POST">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" name="name" value="<%= item.name %>" required>
+      </div>
+      <div class="form-group">
+        <label for="description">Description:</label>
+        <textarea class="form-control" id="description" name="description" required><%= item.description %></textarea>
+      </div>
+      <!-- Add fields for images if they are URLs -->
+      <div class="form-group">
+        <label for="image1">Image URL 1:</label>
+        <input type="text" class="form-control" id="image1" name="images" value="<%= item.images[0] %>" required>
+      </div>
+      <div class="form-group">
+        <label for="image2">Image URL 2:</label>
+        <input type="text" class="form-control" id="image2" name="images" value="<%= item.images[1] %>" required>
+      </div>
+      <div class="form-group">
+        <label for="image3">Image URL 3:</label>
+        <input type="text" class="form-control" id="image3" name="images" value="<%= item.images[2] %>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Item</button>
+    </form>
+  </div>
+</body>
+</html>

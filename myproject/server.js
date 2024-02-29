@@ -18,6 +18,7 @@ app.use(express.static('public'));
 const authRoutes = require('./routes/auth');
 const indexRoute = require('./routes/index')
 const adminRoute = require('./routes/admin')
+
 app.use('/', authRoutes, indexRoute, adminRoute);
 
 const PORT = process.env.PORT || 3000;

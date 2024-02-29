@@ -11,14 +11,22 @@ body {
   
   footer {
     text-align: center;
-    display: flex;
     position: absolute;
-    bottom: 20px;
-    color:#acacac
+    bottom: 0%;
+    padding: 10px;
+    color:#acacac;
+    background: #1c1c1c;
+    width: 100%;
   }
 
-  .portfolio-item {
-    
+  .item {
+    margin-top: 20px;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 50%;
+    margin: auto;
   }
 
   .carousel-inner img {
@@ -27,12 +35,7 @@ body {
 
   /* Optional: Additional styling for the page and items */
   .container {
-    margin-top: 20px;
-    background: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 50%;
+
   }
 
   h3, p {
