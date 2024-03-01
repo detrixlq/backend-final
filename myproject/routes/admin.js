@@ -17,7 +17,6 @@ router.get('/admin', isAuthenticated, async (req, res) => {
   } else{
     return res.status(403).send('Access denied. Only admins allowed.');
   }
-  
 });
 
 router.get('/admin/edit-item/:id', async (req, res) => {
