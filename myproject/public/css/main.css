@@ -20,15 +20,14 @@ body {
   }
 
   .item {
-    margin-top: 20px;
     background: white;
-    padding: 20px;
+    padding: 10px; /* Reduced padding */
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    max-width: 50%;
-    margin: auto;
-    margin-bottom: 20px;
+    max-width: 300px; /* Adjusted for smaller width */
+    margin-bottom: 20px; /* Keep margin at bottom for spacing between rows */
   }
+  
 
   .carousel-inner img {
     margin: auto; /* Center the images in the carousel */
@@ -37,10 +36,34 @@ body {
   /* Optional: Additional styling for the page and items */
 
   h3, p {
-    text-align: center;
+    /* text-align: center; */
+    margin-top: 10px;
+  }
+
+  p{
+    font-size: large;
+  }
+
+  h3{
+    font-size: x-large;
   }
 
   #page-container {
-    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
     min-height: 100vh;
+    padding: 20px; /* Add some padding */
   }
+  
+
+  .items-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%; /* Use max-width if you want to limit the container's maximum size */
+    max-width: 1200px; /* Optional: max-width for large screens */
+  }
+
+  

@@ -12,6 +12,9 @@
         <a class="nav-link" href="/admin">Admin Dashboard</a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="/live-music-events">Live Events</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="/my-profile">My Profile</a>
       </li>
       <li class="nav-item">

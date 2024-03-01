@@ -48,7 +48,7 @@ router.post('/register', async (req, res) => {
         const isValid = await bcrypt.compare(password, user.password);
         if (isValid) {
           req.session.userId = user._id; // Assuming 'user' is the authenticated user object
-          res.redirect('/my-profile');
+          res.redirect('/');
         } else {
           // Passwords do not match
           res.send('Invalid username or password');

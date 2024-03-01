@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Music Events</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <style>
+    .event {
+  margin-bottom: 20px;
+}
+
+.event img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.event h2 {
+  margin: 0 0 10px 0;
+}
+
+  </style>
+</head>
+<body>
+    <%- include('partials/_navbar.js') %>
+    <div id="page-container">
+ 
+  <h1 style="margin-bottom: 25px;">Upcoming live events:</h1>
+  <ul class="items-container">
+    <% events.forEach(event => { %>
+        <div class="item" style="display: flex; flex-direction: column;">
+          <h2><%= event.name %></h2>
+          <% if(event.images && event.images.length > 0) { %>
+            <img src="<%= event.images[0].url %>" alt="<%= event.name %>">
+          <% } %>
+          <p><strong>City:</strong> <%= event.city %></p>
+        <p><strong>Date:</strong> <%= event.date %></p>
+        <a href="<%= event.url %>">More Details</a>
+        </div>
+    <% }) %>
+      
+  </ul>
+    </div>
+    <footer>Ali Atchibayev SE-2211</footer>
+</body>
+</html>
