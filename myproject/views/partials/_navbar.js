@@ -17,6 +17,10 @@
       <li class="nav-item">
         <a class="nav-link" href="/my-profile">My Profile</a>
       </li>
+      <form class="form-inline"  action="/search-artist" method="get">
+    <input class="form-control mr-sm-2" type="search" placeholder="Search song" aria-label="Search" name="term" required></input>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" href="/search-artist">Search</button>
+  </form>
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
       </li>

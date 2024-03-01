@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Information</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+
+    <%- include('partials/_navbar.js') %>
+    <div id="page-container"
+    <h3></h3>
+            <div class="item" style="max-width: 70%;">
+                <h1><%= artistInfo.name %></h1>
+                <h2>Biography</h2>
+                <p><%= artistInfo.bio.summary %></p>    
+            
+            </div>
+    
+            <a href="/">Back to main page</a>
+            </div>
+
+  <footer>Ali Atchibayev SE-2211</footer>
+</body>
+</html>

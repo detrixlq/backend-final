@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Song Results</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css"> <!-- Link your CSS file -->
+</head>
+<body>
+    <%- include('partials/_navbar.js') %>
+    <div id="page-container"
+    <h3></h3>
+    <div class="items-container">
+        <% songs.forEach(song => { %>
+            <div class="item">
+                <img src="<%= song.albumCover %>" alt="Album Cover" class="album-cover">
+                <h2><%= song.title %></h2>
+                <p>Artist: <%= song.artist %></p>
+                <a href="<%= song.url %>" target="_blank">View Lyrics on Genius</a>
+            </div>
+        <% }) %>
+    </div>
+</body>
+</html>
